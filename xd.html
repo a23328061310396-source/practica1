@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table-ciber" id="tablaCiberseguridad">
+        <thead>
+    <tr>
+        <th>Ataque</th>
+       <th>Descripción</th>
+       <th>Impacto</th>
+       <th>Ejemplo</th>
+       <th>Imagen</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+    </table>
+    <script>
+        //El Json (Javasript) 
+        const ataques = [
+    {
+        "ataque":"Phishing",
+        "description":"Engaña al usuario para robar credenciales o datos sensibles mediante correos, mensajes o sitios falsos.",
+        "impacto":"Robo de identidad, pérdida de datos, acceso no autorizado a cuentas.",
+        "ejemplo":"Correo falso de un banco solicitando datos de acceso y tarjeta.",
+        "imagen":"https://www.ssldragon.com/wp-content/uploads/2024/09/Phishing-concept-pic.webp"
+    },
+    {
+        "ataque":"Malware",
+        "description":"Software malicioso (virus, troyanos, gusanos, spyware) que infecta y compromete sistemas.",
+        "impacto":"Pérdida o corrupción de datos, espionaje, uso no autorizado de recursos.",
+        "ejemplo":"Archivo adjunto que instala un troyano al abrirlo.",
+        "imagen":"https://via.placeholder.com/300?text=Malware"
+    },
+    {
+        "ataque":"Ransomware",
+        "description":"Tipo de malware que cifra archivos y demanda un rescate para su restauración.",
+        "impacto":"Interrupción de operaciones, pérdida de acceso a datos críticos, costes de recuperación.",
+        "ejemplo":"Cifrado masivo de documentos en servidores empresariales tras ejecutar un ejecutable malicioso.",
+        "imagen":"https://via.placeholder.com/300?text=Ransomware"
+    },
+    {
+        "ataque":"Inyección SQL",
+        "description":"Inserción de comandos SQL maliciosos en entradas para manipular la base de datos.",
+        "impacto":"Exposición, modificación o eliminación de datos; acceso indebido a información.",
+        "ejemplo":"Usar ' OR '1'='1 en un campo de login para omitir autenticación.",
+        "imagen":"https://via.placeholder.com/300?text=SQL+Injection"
+    },
+    {
+        "ataque":"Cross-Site Scripting (XSS)",
+        "description":"Inyección de scripts maliciosos en páginas web que se ejecutan en el navegador de otros usuarios.",
+        "impacto":"Robo de cookies/sesiones, redirecciones maliciosas, suplantación de identidad.",
+        "ejemplo":"Formulario que permite insertar <script> y roba la cookie de sesión al visitante.",
+        "imagen":"https://via.placeholder.com/300?text=XSS"
+    },
+    {
+        "ataque":"Denegación de Servicio (DoS/DDoS)",
+        "description":"Saturación de recursos de red o servidor para impedir el acceso a usuarios legítimos.",
+        "impacto":"Pérdida de disponibilidad, daños económicos y reputacionales.",
+        "ejemplo":"Envío masivo de peticiones desde una botnet para tumbar un sitio web.",
+        "imagen":"https://via.placeholder.com/300?text=DoS-DDoS"
+    },
+    {
+        "ataque":"Man-in-the-Middle (MitM)",
+        "description":"Intercepción y posible modificación de la comunicación entre dos partes sin que lo sepan.",
+        "impacto":"Exposición de credenciales, manipulación de datos en tránsito, fraude.",
+        "ejemplo":"Ataque en una red Wi-Fi pública donde el atacante intercepta credenciales no cifradas.",
+        "imagen":"https://via.placeholder.com/300?text=MitM"
+    },
+    {
+        "ataque":"Fuerza Bruta",
+        "description":"Ataques automatizados que prueban muchas combinaciones para adivinar contraseñas o claves.",
+        "impacto":"Compromiso de cuentas con contraseñas débiles, escalado de privilegios.",
+        "ejemplo":"Script que intenta miles de contraseñas comunes contra un formulario de login.",
+        "imagen":"https://via.placeholder.com/300?text=Brute+Force"
+    },
+    {
+        "ataque":"Credential stuffing",
+        "description":"Uso de credenciales filtradas de otras brechas para intentar acceso en múltiples servicios.",
+        "impacto":"Compromiso de cuentas donde se reutilizan contraseñas; fraude y robo de datos.",
+        "ejemplo":"Lista de usuarios/contraseñas de una brecha usada contra un sitio de e-commerce.",
+        "imagen":"https://via.placeholder.com/300?text=Credential+Stuffing"
+    },
+    {
+        "ataque":"Zero-day",
+        "description":"Explotación de una vulnerabilidad desconocida por el fabricante, sin parche disponible aún.",
+        "impacto":"Compromiso grave y difícil de mitigar; ejecución remota de código, acceso total.",
+        "ejemplo":"Exploit que aprovecha una falla reciente en un servidor web antes del parche.",
+        "imagen":"https://via.placeholder.com/300?text=Zero-day"
+    },
+    {
+        "ataque":"Amenaza interna (Insider Threat)",
+        "description":"Riesgos provocados por empleados o usuarios con acceso legítimo que abusan o filtran información.",
+        "impacto":"Pérdida de datos sensibles, sabotaje, incumplimiento normativo y daño reputacional.",
+        "ejemplo":"Empleado que descarga información confidencial y la comparte externamente.",
+        "imagen":"https://via.placeholder.com/300?text=Insider+Threat"
+    },
+    {
+        "ataque":"Ataque a la cadena de suministro (Supply Chain)",
+        "description":"Compromiso de software o servicios de terceros para distribuir malware o introducir vulnerabilidades.",
+        "impacto":"Compromiso masivo de clientes/usuarios, difícil detección y amplia propagación.",
+        "ejemplo":"Actualización legítima de un proveedor que incluye código malicioso afectando a muchos clientes.",
+        "imagen":"https://via.placeholder.com/300?text=Supply+Chain"
+    }
+];
+const cuerpoTabla = document.querySelector("#tablaCibeseguridad tbody");
+ataques.forEach(ataque =>{
+    const fila = document.createElement("tr");
+    fila.innerHTML=`
+    <td>${ataque.ataque}</td>
+    <td>${ataque.description}</td>
+    <td>${ataque.impacto}</td>
+    <td>${ataque.ejemplo}</td>
+    <td><img src="${ataque.imagen}= alt=${ataque.ataque}"></td>
+    `;
+    cuerpoTabla.appendChild(fila);
+});
+    </script>
+</body>
+</html>
