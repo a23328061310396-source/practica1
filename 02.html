@@ -1,124 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <script src="stylesheet" href="https://maxcdn.bootstrap.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <title>Astrid Alvarado Moreno</title>
-</head>
-<body>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <title>Proyecto Seguridad</title>
+
     <style>
-        body{
-            background-color: rgb(84, 143, 192);
-            align-items: center;
-            justify-content: center;
-            
+        :root {
+            --oxford-blue: rgb(182, 172, 30); 
+            --zomp: #2ca58dff;
+            --cambridge-blue: #6abc5cff;
+            --baby-powder: #fffdf2;
+            --cyclamen: #B236E7;
         }
 
-        h1{
-            font-family: 'Times New Roman', Times, serif;
-            color: azure;
+        body {
+            background-color: var(--baby-powder);
         }
 
-        h2{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: darkslategray;
+        .navbar {
+            background-color: var(--oxford-blue) !important;
+        }
+
+        .navbar a {
+            color: white !important;
+        }
+
+        .navbar a:hover {
+            background-color: var(--zomp) !important;
+            color: white !important;
+        }
+
+        h2 {
+            color: var(--cyclamen);
+            margin-top: 20px;
+        }
+
+        .section {
+            padding: 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
         }
     </style>
+</head>
+<body>
 
-     <h1>Ciberseguridad</h1>
-     <h2>Tipos de malware</h2>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Inicio</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <!-- Menú desplegable Unidad 1 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unidad 1 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="02.html">Tipos de Malware</a></li>
+                        <li><a href="xd.html">Ciberataques</a></li>
+                    </ul>
+                </li>
+                <!-- Menú desplegable Unidad 2 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unidad 2 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#malware">Tipos de Malware</a></li>
+                        <li><a href="#ataques">Ciberataques</a></li>
+                    </ul>
+                </li>
+                <!-- Menú desplegable Unidad 3 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unidad 3 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="02.html">Tipos de Malware</a></li>
+                        <li><a href="xd.html">Ciberataques</a></li>
+                    </ul>
+                </li>
+                <li><a href="02.html">Xd</a></li>
+            </ul>
+        </div>
+    </nav>
 
-     <table>
-        <tr>
-            <th>Tipo de malware</th>
-            <th>Función</th>
-            <th>Impacto</th>
-        </tr>
-        <tr>
-            <td>Virus</td>
-            <td>Self replicate, infect files</td>
-            <td>Daño de datos al igual que de sistemas</td>
-        </tr>
-        <tr>
-            <td>Gusanos</td>
-            <td>Se propaga a travez de las redes</td>
-            <td>Interrupcion de la red, agotamiento de recursos</td>
-        </tr>
-        <tr>
-            <td>Caballo de troya</td>
-            <td>Se disfraza de software legal</td>
-            <td>Robo de datos, control del sistema</td>
-        </tr>
-        <tr>
-            <td>Ransomware</td>
-            <td>Se disfraza de software legitimo</td>
-            <td>Robo de datos, control del sistema</td>
-        </tr>
-        <tr>
-            <td>Software espía</td>
-            <td>Supervisa en secreto la informacion del usuario</td>
-            <td>Violacion de privacidad, robo de datos</td>
-        </tr>
-        <tr>
-            <td>Software Publicitario</td>
-            <td>Muestra anuncios no deseados</td>
-            <td>Molesta, degradacion del rendimento</td>
-        </tr>
-        <tr>
-            <td>Rootkit</td>
-            <td>Ocultar software malicioso</td>
-            <td>Acceso no autorizado, amenazas persistentes</td>
-        </tr>
-        <tr>
-            <td>Keylogger</td>
-            <td>Registra las pulsaciones de teclas</td>
-            <td>Robo de credenciales, filtracion de datos</td>
-        </tr>
-        <tr>
-            <td>Fileless malware<br> malware sin archivos</td>
-            <td>Corre de la memoria</td>
-            <td>Ataque sigiloso y dificil de detectar</td>
-        </tr>
-        <tr>
-            <td>Cryptojacker</td>
-            <td>Minas de criptomonedas</td>
-            <td>problemas de rendimiento, secuestro de recursos</td>
-        </tr>
-        <tr>
-            <td>Red de boots (Botnet)</td>
-            <td>Crear una red de dispositivos infectados</td>
-            <td>Ataque DDos, distribucion de spam</td>
-        </tr><tr>
-            <td>Bomba Logica (logic bomb)</td>
-            <td>Ejecuta codigo en el disparador</td>
-            <td>Destruccion de datos, danos al sistema</td>
-        </tr>
-        <tr>
-            <td>Wiper (limpiabrisas)</td>
-            <td>Destruye datos, daños al sistema</td>
-            <td>Perdida irreversible de datos</td>
-        </tr>
-        <tr>
-            <td>Scareware</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-     </table>
+    <!-- Contenido principal -->
+    <div class="container">
+        <div id="malware" class="section">
+            <h2>Tipos de Malware</h2>
+            <p><strong>Virus:</strong> Programas que se insertan en archivos legítimos para propagarse.</p>
+            <p><strong>Gusanos:</strong> Se replican automáticamente y se propagan en redes.</p>
+            <p><strong>Troyanos:</strong> Se disfrazan como programas legítimos, pero dañan o roban información.</p>
+            <p><strong>Spyware:</strong> Espía la actividad del usuario y roba datos.</p>
+            <p><strong>Ransomware:</strong> Bloquea el acceso a los datos y pide un rescate.</p>
+        </div>
+
+        <div id="ataques" class="section">
+            <h2>Principales Ciberataques</h2>
+            <p><strong>Phishing:</strong> Engaña al usuario con correos o sitios falsos.</p>
+            <p><strong>DDoS:</strong> Sobrecarga servidores para interrumpir servicios.</p>
+            <p><strong>Ingeniería Social:</strong> Manipula a las personas para obtener información.</p>
+            <p><strong>SQL Injection:</strong> Inserta código malicioso en consultas a bases de datos.</p>
+            <p><strong>Man-in-the-Middle:</strong> Intercepta la comunicación entre dos partes.</p>
+        </div>
+    </div>
 
 </body>
 </html>
